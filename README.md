@@ -32,6 +32,9 @@
            boolean, true / false
 -------------------------------------------------------------------------------------------
 # Listas Ligadas
+
+[0] - [1] - [2] - [3] -...
+
 - 1 Adicionar item
   a) No início (prepend)
   b) No fim (append)
@@ -67,4 +70,10 @@
 conceito
 
   Pilha é uma estrutura de dados ordenada onde o último elemento inserido 
-  será o primeiro a ser retirado (LIFO - last in first out / FILO - first in last out).  
+  será o primeiro a ser retirado (LIFO - last in first out / FILO - first in last out).
+  
+  A extremidade por onde é feita a inserção e remoção de elementos é denominada top.
+|[3]|  
+|[2]|
+|[1]|
+|[0]|
