@@ -124,6 +124,24 @@ Imagine que você está desenvolvendo um sistema de atendimento ao cliente para 
 Crie um programa Java que simule a fila de atendimento, onde os clientes entram na fila e são atendidos um por um.
 
 # Exercício para praticar depois
-Agora, implemente uma fila que utiliza um array / vetor como estrutura de armazenamento!!!
+
+ * Agora, implemente uma fila que utiliza um array / vetor como estrutura de armazenamento!!!
 -------------------------------------------------------------------------------------------
+
+# Arvores
+conceito
+
+Funciona igual á uma árvore genealógica
+
+- Árvore Genérica (Família Tradicional)
+  
+Ex. onde:   A    é pai de: B, C e D
+
+também pode ser avô de: E, F, G e H
+
+
+
+
+
+
 
