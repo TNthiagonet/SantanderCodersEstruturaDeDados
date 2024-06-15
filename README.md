@@ -31,8 +31,7 @@
            ----------------
            boolean, true / false
 -------------------------------------------------------------------------------------------
-# Listas Ligadas
-
+# LISTAS LIGADAS
 [0] - [1] - [2] - [3] -...
 
 - 1 Adicionar item
@@ -66,7 +65,7 @@
 2 - Complexidade de implementação
 
 -------------------------------------------------------------------------------------------
-# Pilha
+# PILHA
 conceito
 
   Pilha é uma estrutura de dados ordenada onde o último elemento inserido 
@@ -93,7 +92,7 @@ conceito
 3 - Simplicidade de implementação;
 -------------------------------------------------------------------------------------------
 
-# Filas
+# FILAS
 conceito
 
   Fila é uma estrutura de dados ordenada onde o primeiro elemento inserido será o 
@@ -105,4 +104,26 @@ e a outra por onde é feita a remoção de elementos (início da fila).
 
 # Funciona igual a fila de um banco
 será atendido, inserido, removido: quem chegou primeiro
+
+- Diversos problemas podem ser solucionados através de uma fila
+  * Escalonamento de tarefas por ordem de chegada;
+  * Tempo de espera de clientes em call center;
+  * Definição do número de caixas de supermercado;
+
+- Principais operações de uma FILA
+  * 1- Adicionar item (queue)
+  * 2- Remover item (dequeue)
+  * 3- Imprimir (print)
+- Operação opcional:
+  * 1- Primeiro da fila (getFirst)
+  * 2- Último da fila (getLast)
+  * 3- Tamanho da fila (getLenght)
+
+# Exercício feito (FilaDeAtendimento[simulador])
+Imagine que você está desenvolvendo um sistema de atendimento ao cliente para uma loja.
+Crie um programa Java que simule a fila de atendimento, onde os clientes entram na fila e são atendidos um por um.
+
+# Exercício para praticar depois
+Agora, implemente uma fila que utiliza um array / vetor como estrutura de armazenamento!!!
+-------------------------------------------------------------------------------------------
 
