@@ -77,3 +77,32 @@ conceito
 |[2]|
 |[1]|
 |[0]|
+
+# Principais operações
+1 - Adicionar item (push)
+2 - Remover item (pop)
+3 - Ler topo (getTop)
+4 - Imprimir (print)
+
+# Operação opcional
+1 - Altura da pilha (getHeight)
+
+# Detalhes finais
+1 - Estrutura dinâmica;
+2 - Eficiente na resolução de problemas LIFO;
+3 - Simplicidade de implementação;
+-------------------------------------------------------------------------------------------
+
+# Filas
+conceito
+
+  Fila é uma estrutura de dados ordenada onde o primeiro elemento inserido será o 
+primeiro a ser retirado
+  (FIFO - first in first ou / LILO - last in last out).
+  
+  A Fila possui duas extremidades: uma por onde é feita a inserção de elementos (fim da fila)
+e a outra por onde é feita a remoção de elementos (início da fila).
+
+# Funciona igual a fila de um banco
+será atendido, inserido, removido: quem chegou primeiro
+

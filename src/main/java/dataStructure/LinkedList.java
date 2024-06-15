@@ -1,289 +1,306 @@
 package dataStructure;
 // java 17
 public class LinkedList {
-    //# Lista ligada - 3 campos principais (cabeça, calda e tamanho)
-    private Node head; //cabeça
-    private Node tail; //calda
-    private int length; //tamanho_da_lista
+    // Lista ligada - 3 campos principais (cabeça, cauda e tamanho)
+    private Node head; // cabeça da lista
+    private Node tail; // cauda da lista
+    private int length; // tamanho da lista
 
-    //# Nó
+    // Classe interna que representa um nó
     class Node {
-        //informação que quero armazenar
+        // Informação que quero armazenar
         String data;
-        //tod0 nó aponta para um proximo nó (next)
+        // Próximo nó na lista
         Node next;
 
+        // Construtor do nó que recebe o dado a ser armazenado
         Node(String data) {
             this.data = data;
         }
     }
-    //# Construtor #
-    public  LinkedList(String data) {
-        // tamanho
+
+    // Construtor da LinkedList que recebe o dado inicial
+    public LinkedList(String data) {
+        // Inicializa o tamanho da lista
         length = 1;
-        // tanto a cabeça quanto a calda será um nó que irá passar a informação para o construtor
+        // Cria um novo nó com o dado fornecido
         Node newNode = new Node(data);
-        // cabeça e a calda apontam para o unico nó da lista
+        // Inicializa cabeça e cauda para apontar para o único nó da lista
         head = newNode;
         tail = newNode;
     }
-    //# Método cabeça
+
+    // Método para obter a cabeça da lista
     public void getHead() {
-        // Se a cabeça estiver vazia
+        // Se a lista estiver vazia
         if (this.head == null) {
             System.out.println("Lista vazia");
-            // caso contrario vou imprimir o valor armazenado nesses nós
         } else {
+            // Caso contrário, imprime o valor armazenado na cabeça
             System.out.println("Head: " + head.data);
         }
     }
-    //# Método calda
+
+    // Método para obter a cauda da lista
     public void getTail() {
-        // Se a calda estiver vazia
+        // Se a lista estiver vazia
         if (this.tail == null) {
             System.out.println("Lista vazia");
         } else {
+            // Caso contrário, imprime o valor armazenado na cauda
             System.out.println("Tail: " + tail.data);
         }
     }
 
-    //# Método tamanho
+    // Método para obter o tamanho da lista
     public void getLength() {
-        // retorna o tamanho da lista
+        // Imprime o tamanho da lista
         System.out.println("Length: " + this.length);
     }
-    // Método de tornar esta lista vazia
+
+    // Método para esvaziar a lista
     public void makeEmpty() {
-        // É só pegar os 2 nós e apontar pra null
+        // Define cabeça e cauda como nulas
         head = null;
         tail = null;
-        // Não esquecer de indicar que o tamanho da lista agora é: 0
+        // Redefine o tamanho da lista para 0
         length = 0;
     }
-    //# Método print
+
+    // Método para imprimir todos os elementos da lista
     public void print() {
-        // adicionando caracteres informando que ele foi chamado
+        // Adicionando caracteres informando que o método foi chamado
         System.out.println("##############################");
-        // Criando nó de leitura (temporário) que vai inicializar pela cabeça da lista
+        // Criando nó temporário que começa na cabeça da lista
         Node temp = this.head;
-        // enquanto esse nó temporário for diferente de vazio ou de nulo
+        // Enquanto o nó temporário não for nulo
         while (temp != null) {
-            // vou imprimir aquele elemento
+            // Imprime o dado do nó atual
             System.out.println(temp.data);
-            // e como eu navego?, basta navegar item a item sempre para o próximo nó
+            // Avança para o próximo nó
             temp = temp.next;
         }
-        // adicionando caracteres informando que ele foi chamado
+        // Adicionando caracteres informando que o método foi chamado
         System.out.println("##############################");
-
     }
-    //# Método append (sem retorno)
+
+    // Método para adicionar um elemento ao final da lista
     public void append(String data) {
-        // essa informação vai ser armazenada em um nó
+        // Cria um novo nó com o dado fornecido
         Node newNode = new Node(data);
-        // se a lista estiver vazia (se o tamanho for igual a 0)
-        if (length == 0 ) {
-            // tanto a cabeça quanto a calda vão apontar pra esse novo nó
+        // Se a lista estiver vazia
+        if (length == 0) {
+            // Inicializa cabeça e cauda para apontar para o novo nó
             head = newNode;
             tail = newNode;
-        // se não - eu faço a operação e cima da calda
         } else {
-            // o proximo elemento da calda vai ser um novo elemento
+            // Caso contrário, adiciona o novo nó ao final da lista
             tail.next = newNode;
-            // não esqueça que agora o ultimo elemento vai ser igual ao novo nó
+            // Atualiza a cauda para o novo nó
             tail = newNode;
         }
-        // e incremento o tamanho da lista
+        // Incrementa o tamanho da lista
         length++;
     }
-    //# Método remover do final da lista
+
+    // Método para remover o último elemento da lista
     public Node removeLast() {
-        // se a lista estiver vazia, retorne nulo
+        // Se a lista estiver vazia, retorna nulo
         if (length == 0) return null;
-        // identificando o penultimo elemento da lista
+
+        // Cria um nó temporário para percorrer a lista
         Node pre = head;
-        // nó temporário
+        // Cria um nó temporário para armazenar o último nó
         Node temp = null;
-        // enquanto meu leitor chamado pre for diferente do final da lista (ultimo elemento)
+
+        // Enquanto o próximo nó não for a cauda
         while (pre.next != tail) {
-            // vou ter que navegar na lista
+            // Avança para o próximo nó
             pre = pre.next;
-            // quando ele sair do while significa que ele encontrou o penultimo elemento
         }
-        // antes de movimentar a calda, o que vai ser removido vai ser o que esta armazenado na calda
+        // Armazena o nó atual da cauda
         temp = tail;
-        // quando ele encontra o penultimo elemento
+        // Atualiza a cauda para o penúltimo nó
         tail = pre;
-        // antes de apagar ele vai armazenar
-        // o ultimo vai ser igual ao penultimo e o proximo do ultimo vai ser vazio
+        // Remove a referência para o último nó
         tail.next = null;
-        // diminuindo o tamanho da lista, já que fiz a remoção
-        length--;
-        // e se esse tamanho for agora zerado
-        if (length == 0) {
-            // ou seja, a lista s[o tinha um elemento
-            head = null;
-            // a cabeça da lista e a sua calda são nulas
-            tail = null;
-        }
-        // e vou retornar temp
-        return temp;
-    }
-    //# Método prepend (Adiciona no início da lista)
-    public void prepend(String data) {
-        // criamos um nó com esse novo valor
-        Node newNode = new Node(data);
-        // se o tamanho da lista for igual a zero
-        if (length == 0) {
-            // ta to o primeiro quanto o ultimo elemento ser[a representado pelo novo nó
-            head = newNode;
-            tail = newNode;
-        // se não
-        } else {
-            // O next vai ser o inicio da lista atual
-            newNode.next = head;
-            // e o inicio da lista vai ser o novo nó
-            head = newNode;
-        }
-        // não esquecer de incrementar o tamanho atual
-        length++;
-    }
-    //# Método remover First - remove o primeiro item da lista
-    public Node removeFirst() {
-        // se a lista for vazia retorne null
-        if (length == 0) return null;
-        // criando nó leitor temporário que vai ser o primeiro elemento
-        Node temp = head;
-        // depois o segundo elemento vai se tormar o primeiro
-        head = head.next;
-        // desplugo o ex primeiro elemento
-        temp.next = null;
-        // e diminuo o tamanho da quantidade de elementos da lista
+        // Decrementa o tamanho da lista
         length--;
 
-        // se o length for zero após a remoção
+        // Se a lista estiver vazia após a remoção
         if (length == 0) {
-            // por segurança, tanto a cabeça quanto a calda tem que ser null
+            // Define cabeça e cauda como nulas
             head = null;
             tail = null;
         }
-        // aqui eu retorno o temp
+        // Retorna o nó removido
         return temp;
     }
-    //# Método get (qualquer posição)
-    public Node get(int index) {
-        // se o índice for menor que zero ou maior igual ao tamanho da lista retorne nulo
-        if (index < 0 || index >= length) return null;
-        // Criando nó temporário
+
+    // Método para adicionar um elemento ao início da lista
+    public void prepend(String data) {
+        // Cria um novo nó com o dado fornecido
+        Node newNode = new Node(data);
+        // Se a lista estiver vazia
+        if (length == 0) {
+            // Inicializa cabeça e cauda para apontar para o novo nó
+            head = newNode;
+            tail = newNode;
+        } else {
+            // Caso contrário, insere o novo nó no início da lista
+            newNode.next = head;
+            head = newNode;
+        }
+        // Incrementa o tamanho da lista
+        length++;
+    }
+
+    // Método para remover o primeiro elemento da lista
+    public Node removeFirst() {
+        // Se a lista estiver vazia, retorna nulo
+        if (length == 0) return null;
+        // Armazena o nó atual da cabeça
         Node temp = head;
-        // começando da posição 0 até a posição index
-        for(int i = 0; i<index; i++) {
+        // Atualiza a cabeça para o próximo nó
+        head = head.next;
+        // Remove a referência do nó removido
+        temp.next = null;
+        // Decrementa o tamanho da lista
+        length--;
+
+        // Se a lista estiver vazia após a remoção
+        if (length == 0) {
+            // Define cabeça e cauda como nulas
+            head = null;
+            tail = null;
+        }
+        // Retorna o nó removido
+        return temp;
+    }
+
+    // Método para obter o nó em uma posição específica
+    public Node get(int index) {
+        // Se o índice for inválido, retorna nulo
+        if (index < 0 || index >= length) return null;
+        // Cria um nó temporário para percorrer a lista
+        Node temp = head;
+        // Avança até a posição desejada
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
-        // e vou retornar a variável
+        // Retorna o nó na posição desejada
         return temp;
     }
-    //# Método "bonus" set
+
+    // Método para atualizar o valor de um nó em uma posição específica
     public boolean set(int index, String data) {
-        // criar nó temporário
+        // Obtém o nó na posição desejada
         Node temp = get(index);
-        // se esse nó existir
+        // Se o nó existir
         if (temp != null) {
-            // o novo valor vai ser igual ao valor que recebi como parâmetro
+            // Atualiza o dado do nó
             temp.data = data;
-            // e retornar verdade
+            // Retorna verdadeiro indicando sucesso
             return true;
         }
-        // se não conseguir vou retornar
+        // Se o nó não existir, retorna falso
         return false;
     }
 
-    //# Método insert, booleano, com indice e valor
+    // Método para inserir um nó em uma posição específica
     public boolean insert(int index, String data) {
-        // se o indice tiver inváido
-        if (index < 0 || index >= length) return false;
-        // se inserir na posição inicial
+        // Se o índice for inválido, retorna falso
+        if (index < 0 || index > length) return false;
+        // Se for inserido na posição inicial
         if (index == 0) {
-            // basta chamar o método prepend
+            // Chama o método prepend
             prepend(data);
-            // retorne verdadeiro
             return true;
         }
-        // se o indice for igual ao tamanho da lista
+        // Se for inserido na posição final
         if (index == length) {
-            // ele quer inserir no final da lista
+            // Chama o método append
             append(data);
             return true;
         }
 
-        // Caso contrario vou criar um nó
+        // Cria um novo nó com o dado fornecido
         Node newNode = new Node(data);
-        // vou pegar a posição naquele indice
+        // Obtém o nó na posição anterior à desejada
         Node temp = get(index - 1);
-        // novo nó vai apontar para quem o elemento anterior está apontando
+        // Faz o novo nó apontar para o próximo nó do anterior
         newNode.next = temp.next;
-        // e o elemento anterior vai começar a apontar para o novo nó
+        // Faz o nó anterior apontar para o novo nó
         temp.next = newNode;
-        // e vamos aumentar o length
+        // Incrementa o tamanho da lista
         length++;
-        // e retorno verdade
+        // Retorna verdadeiro indicando sucesso
         return true;
     }
-    //# Método  remover de uma posição específica
-    public  Node remove(int index) {
-        // se o infice for menor do que zero ou indice maior igual a lista, retorne nullo
+
+    // Método para remover um nó de uma posição específica
+    public Node remove(int index) {
+        // Se o índice for inválido, retorna nulo
         if (index < 0 || index >= length) return null;
-        // se o indice for a primeira posição vou retornar o removeFirst
+        // Se for removido da posição inicial, chama o método removeFirst
         if (index == 0) return removeFirst();
-        // se o indice for a ultima posição vou retornar o removeLast
-        if (index == length -1) return removeLast();
+        // Se for removido da posição final, chama o método removeLast
+        if (index == length - 1) return removeLast();
 
-        // caso contrario, vou ter o elemento anterior
+        // Obtém o nó na posição anterior à desejada
         Node prev = get(index - 1);
-        // vou criar um nó temporário que vai ser o próximo do anterior
+        // Armazena o nó a ser removido
         Node temp = prev.next;
-        // e vamos fazer a manipulação dos apontadores
-
-        // o proximo do anterior vai ser o proximo de quem eu quero remover
+        // Faz o nó anterior apontar para o próximo do nó removido
         prev.next = temp.next;
-        // então se eu quero remover o 3 o proximo do 2 tem que ser o 4
+        // Remove a referência do nó removido
         temp.next = null;
-        // o tamanho da lista vai diminuir
+        // Decrementa o tamanho da lista
         length--;
-
-        // retorna temporario que esta armazenando o 3
+        // Retorna o nó removido
         return temp;
     }
 
-
-    // # Criando Método Main aqui mesmo para testar
+    // Método main para testar a lista ligada
     public static void main(String[] args) {
-        // Criando propria lista aqui
+        // Criando a lista com um elemento inicial
         LinkedList list = new LinkedList("elemento 1");
+        // Adicionando elementos ao final da lista
         list.append("elemento 2");
         list.append("elemento 3");
+        // Adicionando elemento ao início da lista
         list.prepend("elemento 0");
 
+        // Removendo elemento da posição 2
         list.remove(2);
+        // Imprimindo a lista
         list.print();
 
-//        list.insert(3, "elemento 2.5");
+        // Inserindo elemento na posição 3 (descomentado para teste)
+        // list.insert(3, "elemento 2.5");
 
-        // imprimir o elemento de indice 2
-//        System.out.println(list.get(2).data);
+        // Imprimindo o elemento de índice 2 (descomentado para teste)
+        // System.out.println(list.get(2).data);
 
-//        System.out.println(list.removeFirst().data);
-//        System.out.println(list.removeLast().data);
-//       list.print();
+        // Removendo e imprimindo o primeiro elemento (descomentado para teste)
+        // System.out.println(list.removeFirst().data);
 
-//       list.set(1, "elemento 0.5");
-//        list.print();
+        // Removendo e imprimindo o último elemento (descomentado para teste)
+        // System.out.println(list.removeLast().data);
 
-        // chamar os métodos
+        // Imprimindo a lista
+        // list.print();
+
+        // Atualizando o elemento na posição 1 (descomentado para teste)
+        // list.set(1, "elemento 0.5");
+        // Imprimindo a lista
+        // list.print();
+
+        // Chamando métodos para obter informações da lista
         list.getHead();
         list.getTail();
         list.getLength();
+        // Imprimindo a lista
         list.print();
     }
-
 }
