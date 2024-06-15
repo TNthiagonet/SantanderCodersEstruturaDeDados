@@ -63,3 +63,8 @@
 2 - Complexidade de implementação
 
 -------------------------------------------------------------------------------------------
+# Pilha
+conceito
+
+  Pilha é uma estrutura de dados ordenada onde o último elemento inserido 
+  será o primeiro a ser retirado (LIFO - last in first out / FILO - first in last out).  
