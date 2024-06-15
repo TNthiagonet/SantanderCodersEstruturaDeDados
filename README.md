@@ -1,5 +1,8 @@
 # Santander Coders Estrutura de Dados
-- Introdução a estrutura de dados
+- Instrutor: João Carlos Sousa do Vale
+- Aluno: EuzinhoMesmisViss (ThiagoNET)
+
+- Introdução à estruturas de dados
   Como desenvolvedores de software, à nossa principal preocupação é a resolução de problemas computacionais. E para resolver esses problemas computacionais, a ferramenta que a gente utiliza é a construção de algoritmos.
 
 - Os algoritmos são compostos por: Instruções + Dados, responsáveis por armazenar as informações necessárias para o processamento da nossa solução.
