@@ -31,7 +31,7 @@
            ----------------
            boolean, true / false
 -------------------------------------------------------------------------------------------
-# Lista Ligada
+# Listas Ligadas
 - 1 Adicionar item
   a) No início (prepend)
   b) No fim (append)
@@ -54,4 +54,12 @@
 2 - Está vazia? (isEmpty)
 3 - Esvaziar lista (makeEmpty)
                               
-  
+# Vantagens
+1 - Estrutura dinâmica;
+2 - Utilização da memória;
+3 - Utilizado na construção de outras estruturas
+# Desvantagem
+1 - Acesso sequêncial;
+2 - Complexidade de implementação
+
+-------------------------------------------------------------------------------------------
