@@ -2,7 +2,8 @@
 - Instrutor: João Carlos Sousa do Vale
 - Aluno: EuzinhoMesmisViss (ThiagoNET)
 
-- Introdução à estruturas de dados
+-------------------------------------------------------------------------------------------
+# Introdução à estruturas de dados
   Como desenvolvedores de software, à nossa principal preocupação é a resolução de problemas computacionais. E para resolver esses problemas computacionais, a ferramenta que a gente utiliza é a construção de algoritmos.
 
 - Os algoritmos são compostos por: Instruções + Dados, responsáveis por armazenar as informações necessárias para o processamento da nossa solução.
@@ -29,6 +30,28 @@
            BOOLEANO
            ----------------
            boolean, true / false
+-------------------------------------------------------------------------------------------
+# Lista Ligada
+- 1 Adicionar item
+  a) No início (prepend)
+  b) No fim (append)
+  c) Em uma determinada posição (insert)
 
+- 2 ALer item
+  a) No início (getHead)
+  b) No fim (getTail)
+  c) Em uma determinada posição (get)
+
+- 3 Remover item
+  a) No início (removeFirst)
+  b) No fim (removeLast)
+  c) Em uma determinada posição (delete)
+
+- 4 Imprimir
+
+- Operações "opcionais":
+1 - Tamanho atual (getLenght)
+2 - Está vazia? (isEmpty)
+3 - Esvaziar lista (makeEmpty)
                               
   

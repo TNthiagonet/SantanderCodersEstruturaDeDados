@@ -5,9 +5,9 @@ import implementation.SupermarketArray;
 import java.util.Scanner;
 
 
-public class Main {
-
-    private final static int SIZE = 30;
+public class MainSupermarket {
+    // aqui diz o tamanho da lista
+    private final static int SIZE = 3;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
