@@ -72,6 +72,9 @@ conceito
   será o primeiro a ser retirado (LIFO - last in first out / FILO - first in last out).
   
   A extremidade por onde é feita a inserção e remoção de elementos é denominada top.
+.
+.
+.
 |[3]|  
 |[2]|
 |[1]|
@@ -133,6 +136,8 @@ conceito
 
 Funciona igual á uma árvore genealógica
 
+- ÁRVORES BINÁRIAS
+
 ................. Árvore Cheia .............
 ............................................
 ........................[A].................
@@ -160,7 +165,8 @@ Funciona igual á uma árvore genealógica
 ............[E]...[F]...[G]....[H]..........
 ............................................
 
-
+Aula pausada em 21:30 min
+descansar e continuar amanhã (')(') .
 
 
 
