@@ -1,6 +1,6 @@
 # GitHub Comandos
 - Para subir atualizações
-- 
+
 git status
 
 git add .
@@ -35,7 +35,7 @@ git push -u origin master
 
 
 # Para baixar atualizações online para o local
-- 
+ 
 git pull origin main
 
 
