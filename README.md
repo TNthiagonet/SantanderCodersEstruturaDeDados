@@ -165,8 +165,67 @@ Funciona igual á uma árvore genealógica
 ............[E]...[F]...[G]....[H]..........
 ............................................
 
-Aula pausada em 21:30 min
-descansar e continuar amanhã (')(') .
+# Operação: Travessia
+
+- Pré Ordem
+(R-E-D) Raíz - Esquerda - Direita
+- Em Ordem  
+(E-R-D) Esquerda - Raíz - Direita
+- Pós Ordem
+(E-D-R) Esquerda - Direita - Raíz
+
+Exemplo: 
+.............. Árvore Perfeita...............
+.............................................
+.....................[37]....................
+..................../.....\..................
+................[11]........[66].............
+............../....\......./....\...........
+...........[08]...[17]...[42]....[72]........
+.............................................
+- Pré Ordem
+37, 11, 08, 17, 66, 42, 72
+- Em Ordem  (obs. quando não houver elemento a esquerda ele volta para sua raíz)
+08, 11, 17, 37, 42, 66, 72
+- Pós Ordem
+08, 17, 11, 42, 72, 66, 37
+
+  
+- Busca em Largura (BFS)
+37, 11, 66, 08, 17, 42, 72
+
+- Enquanto a fila possuir elemento:
+  * processa item
+  * se esquerda não vazia
+    inserir item
+  * se direita não vazia
+    inserir item
+
+-------------------------------------------------------------------------------------------
+
+# Arvore Binária de Busca
+conceito
+
+  A Árvore de Busca Binária é uma estrutura de dados de árvore binária, onde todos os nós
+da subárvore esquerda possuem valor numérico inferior ao nó raiz e todos os nós da subárvore
+direita possuem um valor superior ao nó raíz.
+  .............................................
+  .....................[37]....................
+  ..................../.....\..................
+  ................[11]........[66].............
+  ............../....\......./....\............
+  ...........[08]...[17]...[42]....[72]........
+  .............................................
+- Operações de Árvore Binária de Busca
+  * Principais operações:
+  1- Inserir item (insert)
+  2- Contém item? (contains)
+  3- Remover item (delete)
+  
+Caso especial: árvore vazia.
+Caso especial: elemento existente.
+
+
 
 
 
